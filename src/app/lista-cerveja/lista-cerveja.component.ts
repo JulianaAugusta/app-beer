@@ -5,8 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lista-cerveja.component.html',
   styleUrls: ['./lista-cerveja.component.css']
 })
-export class ListaCervejaComponent implements OnInit {
-
+export class ListaCervejaComponent implements OnInit
+{
+  titulo: string = 'Lista de Cervejas:'
   constructor() { }
 
   ngOnInit() {
