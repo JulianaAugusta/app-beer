@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaCervejaComponent implements OnInit
 {
-  titulo: string = 'Lista de Cervejas:'
-  constructor() { }
+  titulo: string = ''
 
-  ngOnInit() {
+  constructor() { }//só instacia
+
+  ngOnInit() {//instancia e faz
+    this.titulo = 'Cervejas'
   }
 
+  OnAlert(nome: string){
+    alert(nome)
+    this.titulo = nome
+  }
 }
