@@ -7,6 +7,8 @@ import { DetalheCervejaComponent } from './components/detalhe-cerveja/detalhe-ce
 import { EspacoMoedaPipe } from './pipes/espaco-moeda.pipe';
 import { UnidadeCervejaPipe } from './pipes/unidade-cerveja.pipe';
 import { PontoEVirgulaPipe } from './pipes/ponto-e-virgula.pipe';
+import { FormsModule } from '@angular/forms';
+import { FiltroCervejaPipe } from './pipes/filtro-cerveja.pipe'
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { PontoEVirgulaPipe } from './pipes/ponto-e-virgula.pipe';
     DetalheCervejaComponent,
     EspacoMoedaPipe,
     UnidadeCervejaPipe,
-    PontoEVirgulaPipe
+    PontoEVirgulaPipe,
+    FiltroCervejaPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,6 +56,7 @@ export class ListaCervejaComponent implements OnInit
       "unidade": "mL"
     }
   ];
+  filtro: string = ''
 
   constructor() { }//só instacia
 

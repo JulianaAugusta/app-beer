@@ -6,7 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PontoEVirgulaPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-        console.log(value);
+    if(!value)
+      return null;
     return value.replace('.', ',')
 
   }
