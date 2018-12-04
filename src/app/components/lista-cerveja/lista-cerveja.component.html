@@ -1,8 +1,23 @@
-<h5 class="p-3" id="titulo">
-  {{ titulo }}
-</h5>
+<div class="card">
+    <div class="card-header">
+        {{ titulo }} Total de cervejas disponíveis: {{ cervejas.length }}
+    </div>
 
-<table class="table table-striped">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filtrar cerveja: </div>
+        <div class="col-md-4">
+          <input type="text"  />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Filtrando por: </h4>
+        </div>
+      </div>
+
+<table class="table table-striped" *ngIf="cervejas.length > 0; else nottable">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -12,21 +27,30 @@
       <th scope="col">Preço</th>
       <th scope="col">Data</th>
       <th scope="col">Ranking</th>
-      <th scope="col">Foto</th>
+      <th scope="col">
+        <button class="btn btn-danger" (click)="mostrarImagens()">{{ showImage ? "Esconder" : "Mostrar" }}</button>
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of cervejas">
       <th scope="row">{{ item.id }}</th>
-      <td>{{ item.nome }}</td>
-      <td>{{ item.familia }}</td>
-      <td>{{ item.litragem }}</td>
-      <td>{{ item.preco }}</td>
-      <td>{{ item.data }}</td>
+      <td>{{ item.nome | uppercase }}</td>
+      <td>{{ item.familia | lowercase }}</td>
+      <td>{{ item.litragem | unidadeCerveja: item.unidade }}</td>
+      <td>{{ item.preco | currency:'BRL':true:'1.2-2' | espacoMoeda | pontoEVirgula }}</td>
+      <td>{{ item.data | date:'dd/MM/yyyy' }}</td>
       <td>{{ item.ranking }}</td>
       <td>
         <!-- <img src="{{ item.foto }}"> -->
-        <img [src]="item.foto">
+        <img [src]="item.foto" *ngIf="showImage">
       </td>
   </tbody>
 </table>
+
+  <ng-template #nottable>
+    Sem Cerveja! Tome um Refri!
+  </ng-template>
+
+</div>
+</div>
