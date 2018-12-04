@@ -25,7 +25,8 @@
       <td>{{ item.data }}</td>
       <td>{{ item.ranking }}</td>
       <td>
-        <img src="{{ item.foto }}"> 
+        <!-- <img src="{{ item.foto }}"> -->
+        <img [src]="item.foto">
       </td>
   </tbody>
 </table>
