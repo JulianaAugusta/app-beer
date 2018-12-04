@@ -1,0 +1,31 @@
+<h5 class="p-3" id="titulo">
+  {{ titulo }}
+</h5>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Familia</th>
+      <th scope="col">Litragem (ml)</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Data</th>
+      <th scope="col">Ranking</th>
+      <th scope="col">Foto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cervejas">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.nome }}</td>
+      <td>{{ item.familia }}</td>
+      <td>{{ item.litragem }}</td>
+      <td>{{ item.preco }}</td>
+      <td>{{ item.data }}</td>
+      <td>{{ item.ranking }}</td>
+      <td>
+        <img src="{{ item.foto }}"> 
+      </td>
+  </tbody>
+</table>
